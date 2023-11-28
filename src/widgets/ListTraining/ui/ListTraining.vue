@@ -1,7 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ListItem from '@/widgets/ListTraining/ui/ListItem.vue'
+</script>
 
 <template>
-  <div></div>
+  <div class="list-training"><ListItem /></div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.list-training {
+  padding: 20px;
+}
+</style>

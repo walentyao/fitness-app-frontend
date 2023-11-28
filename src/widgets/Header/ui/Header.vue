@@ -8,5 +8,7 @@
 .header {
   padding: 10px;
   color: var(--app-color-text);
+  display: flex;
+  justify-content: center;
 }
 </style>
