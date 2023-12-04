@@ -1,1 +1,0 @@
-export { AddTraining } from './ui'

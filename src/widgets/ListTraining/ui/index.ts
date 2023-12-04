@@ -1,3 +1,4 @@
-import ListTraining from '@/widgets/ListTraining/ui/ListTraining.vue'
+import ListTraining from './ListTraining.vue'
+import CardAddTraining from './CardAddTraining.vue'
 
-export { ListTraining }
+export { ListTraining, CardAddTraining }

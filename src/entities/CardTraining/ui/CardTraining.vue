@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ITraining } from '@/entities/CardTraining/interfaces/section.interface'
+import type { ITraining } from '@/shared/interfaces/section.interface'
 
 interface IProps {
   training: ITraining

@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import { PlusIcon } from '@heroicons/vue/24/solid'
+
+const emit = defineEmits<{
+  (e: 'clickAddCard'): void
+}>()
 </script>
 
 <template>
-  <div class="add-training">
+  <div
+    class="add-training"
+    @click="emit('clickAddCard')"
+  >
     <PlusIcon class="add-training__icon" />
   </div>
 </template>
@@ -17,6 +24,8 @@ import { PlusIcon } from '@heroicons/vue/24/solid'
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
 
   &__icon {
     width: 40px;
