@@ -1,18 +1,12 @@
 <script setup lang="ts">
 import { ListTraining } from '@/widgets/ListTraining'
-import { TheModal, useModalStore } from '@/widgets/Modal'
-import { CreateTraining } from '@/features/CreateTraining'
-
-const storeModal = useModalStore()
-const { toggleModal } = storeModal
+import CreateTraining from '@/features/CreateTraining/ui/CreateTraining.vue'
 </script>
 
 <template>
   <main class="page-training">
-    <ListTraining @add-training="toggleModal" />
-    <TheModal>
-      <CreateTraining />
-    </TheModal>
+    <ListTraining />
+    <CreateTraining />
   </main>
 </template>
 
@@ -22,5 +16,6 @@ const { toggleModal } = storeModal
 
   display: flex;
   flex-direction: column;
+  row-gap: 20px;
 }
 </style>

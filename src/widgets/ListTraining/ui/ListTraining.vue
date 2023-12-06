@@ -1,18 +1,10 @@
 <script setup lang="ts">
 import CardTraining from '@/entities/CardTraining/ui/CardTraining.vue'
 import { storeToRefs } from 'pinia'
-import CardAddTraining from './CardAddTraining.vue'
 import { useListTrainingsStore } from '@/widgets/ListTraining/model/list-trainings.store'
 
 const store = useListTrainingsStore()
 const { trainings } = storeToRefs(store)
-
-const emit = defineEmits<{
-  (e: 'addTraining'): void
-}>()
-const handlerClickAddCard = () => {
-  emit('addTraining')
-}
 </script>
 
 <template>
@@ -22,10 +14,6 @@ const handlerClickAddCard = () => {
         v-for="item in trainings"
         :key="item.title"
         :training="item"
-      />
-      <CardAddTraining
-        @click-add-card="handlerClickAddCard"
-        key="add-card"
       />
     </TransitionGroup>
   </div>
