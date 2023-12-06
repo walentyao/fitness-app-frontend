@@ -1,0 +1,1 @@
+export { TheModal } from './ui'

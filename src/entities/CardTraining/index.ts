@@ -1,1 +1,0 @@
-export { CardTraining } from './ui'

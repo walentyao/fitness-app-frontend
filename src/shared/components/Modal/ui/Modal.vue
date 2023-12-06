@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import { useModalStore } from '@/widgets/Modal/model/modal.store'
-import { storeToRefs } from 'pinia'
+interface IProps {
+  openModal: boolean
+}
 
-const store = useModalStore()
-const { activeModal } = storeToRefs(store)
-const { toggleModal } = store
+interface IEmits {
+  (e: 'toggleModal'): void
+}
+
+const props = defineProps<IProps>()
+const emit = defineEmits<IEmits>()
 </script>
 
 <template>
@@ -12,8 +16,8 @@ const { toggleModal } = store
     <Transition name="fade">
       <div
         class="modal"
-        v-if="activeModal"
-        @click="toggleModal"
+        v-if="openModal"
+        @click="emit('toggleModal')"
       >
         <div @click.stop>
           <slot></slot>

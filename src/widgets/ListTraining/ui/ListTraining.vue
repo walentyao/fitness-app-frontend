@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CardTraining from '@/entities/CardTraining/ui/CardTraining.vue'
+import { CardTraining } from '@/entities/Training'
 import { storeToRefs } from 'pinia'
 import { useListTrainingsStore } from '@/widgets/ListTraining/model/list-trainings.store'
 
@@ -30,6 +30,7 @@ const { trainings } = storeToRefs(store)
 .list-leave-active {
   transition: all 0.5s ease;
 }
+
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
