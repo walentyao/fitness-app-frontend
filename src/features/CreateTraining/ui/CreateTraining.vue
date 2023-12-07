@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import OpenCardAddTraining from './OpenCardAddTraining.vue'
 import CardCreateTraining from '@/entities/Training/ui/CardCreateTraining.vue'
+import CardAddTraining from '@/features/CreateTraining/ui/CardAddTraining.vue'
 
 const isOpenTraining = ref(false)
 </script>
 
 <template>
-  <div>
-    <OpenCardAddTraining>
+  <div class="create-training">
+    <CardAddTraining>
       <CardCreateTraining />
-    </OpenCardAddTraining>
+    </CardAddTraining>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.create-training {
+}
+</style>
