@@ -3,8 +3,16 @@ import { PlusIcon } from '@heroicons/vue/24/solid'
 import { ref } from 'vue'
 
 const openCard = ref<boolean>(false)
+const positionCard = ref<number>(0)
+const cardAdd = ref<HTMLDivElement>()
 const handlerClickCard = () => {
+  const distance = cardAdd.value?.getBoundingClientRect()
+  if (distance) positionCard.value = distance.top
+
+  console.log(distance.top)
   openCard.value = !openCard.value
+
+  console.log(positionCard.value)
 }
 </script>
 
@@ -13,6 +21,8 @@ const handlerClickCard = () => {
     class="add-training"
     @click="handlerClickCard"
     :class="{ 'animation-open-card': openCard }"
+    :style="{ '--distance-top': positionCard }"
+    ref="cardAdd"
   >
     <PlusIcon class="add-training__icon" />
 
@@ -32,12 +42,16 @@ const handlerClickCard = () => {
   background: var(--color-card-training);
   border-radius: 6px;
 
+  --distance-top: 0px;
+
+  width: 320px;
+
+  height: 100px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease;
-  width: 100%;
   cursor: pointer;
 
   &__icon {
@@ -65,9 +79,21 @@ const handlerClickCard = () => {
 .animation-open-card {
   // чтоб работала анимация, нужно прописать изначальные размеры в пикселях
   position: absolute;
-  left: 0;
   top: 0;
-  width: 100%;
-  min-height: 100%;
+  left: 0;
+  animation-name: scale-fullscreen;
+  animation-duration: 8s;
+  animation-timing-function: ease;
+
+  transition: all 8s ease;
+}
+
+@keyframes scale-fullscreen {
+  to {
+    margin-top: 0;
+  }
+  from {
+    margin-top: var(--distance-top);
+  }
 }
 </style>
