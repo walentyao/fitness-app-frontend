@@ -10,23 +10,34 @@ const isOpenTraining = ref(false)
   <div
     class="create-training"
     @click="isOpenTraining = !isOpenTraining"
+    :class="{ 'create-training__open': isOpenTraining }"
   >
-    <PlusIcon
-      v-if="!isOpenTraining"
-      class="create-training__icon"
-    />
-    <CardCreateTraining v-else />
+    <div class="create-card">
+      <PlusIcon
+        v-if="!isOpenTraining"
+        class="create-card__icon"
+      />
+      <CardCreateTraining v-else />
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .create-training {
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 350px;
+  &__open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.create-card {
+  width: 320px;
   height: 100px;
   border-radius: 6px;
   background: var(--color-card-training);
