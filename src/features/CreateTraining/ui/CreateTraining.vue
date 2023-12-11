@@ -12,12 +12,20 @@ const isOpenTraining = ref(false)
     @click="isOpenTraining = !isOpenTraining"
     :class="{ 'create-training__open': isOpenTraining }"
   >
-    <div class="create-card">
-      <PlusIcon
-        v-if="!isOpenTraining"
-        class="create-card__icon"
-      />
-      <CardCreateTraining v-else />
+    // TODO: add animation
+    <div
+      class="create-card"
+      :class="{ 'create-card__open': isOpenTraining }"
+    >
+      <Transition name="fade">
+        <div
+          v-if="!isOpenTraining"
+          class="card-plus"
+        >
+          <PlusIcon class="create-card__icon" />
+        </div>
+        <CardCreateTraining v-else />
+      </Transition>
     </div>
   </div>
 </template>
@@ -34,6 +42,8 @@ const isOpenTraining = ref(false)
     left: 0;
     width: 100%;
     height: 100%;
+
+    padding: 20px;
   }
 }
 .create-card {
@@ -42,9 +52,31 @@ const isOpenTraining = ref(false)
   border-radius: 6px;
   background: var(--color-card-training);
 
+  transition: all 0.3s ease;
+
   &__icon {
     width: 30px;
     height: 30px;
   }
+
+  &__open {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card-plus {
+  width: 320px;
+  height: 100px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
