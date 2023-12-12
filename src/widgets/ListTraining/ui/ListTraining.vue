@@ -2,6 +2,7 @@
 import { CardTraining } from '@/entities/Training'
 import { storeToRefs } from 'pinia'
 import { useListTrainingsStore } from '@/widgets/ListTraining/model/list-trainings.store'
+import InputText from 'primevue/inputtext'
 
 const store = useListTrainingsStore()
 const { trainings } = storeToRefs(store)
