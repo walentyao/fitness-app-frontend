@@ -1,1 +1,1 @@
-export { CreateTraining } from './ui'
+export { CreateTraining } from './components'

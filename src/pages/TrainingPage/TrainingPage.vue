@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ListTraining } from '@/widgets/ListTraining'
-import CreateTraining from '@/features/CreateTraining/ui/CreateTraining.vue'
+import CreateTraining from '@/features/CreateTraining/components/CreateTraining.vue'
 </script>
 
 <template>
