@@ -13,9 +13,7 @@ import { CardCreateTraining } from '@/entities/Training'
   padding: 20px;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 20px;
 }
 </style>

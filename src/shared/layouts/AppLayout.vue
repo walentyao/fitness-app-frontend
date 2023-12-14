@@ -5,10 +5,8 @@
     <div class="layout-app__header">
       <RouterView name="header" />
     </div>
-    <div>
-      <Transition name="slide-fade">
-        <RouterView />
-      </Transition>
+    <div class="layout-app__content">
+      <RouterView/>
     </div>
     <div class="layout-app__footer">
       <RouterView name="footer" />
@@ -27,24 +25,14 @@
     top: 0;
   }
 
+  &__content {
+    position: relative;
+  }
+
   &__footer {
     width: 100%;
     position: fixed;
     bottom: 0;
   }
-}
-
-.slide-fade-enter-active {
-  transition: all 0.4s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
 }
 </style>

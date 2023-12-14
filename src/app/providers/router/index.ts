@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory, RouterView } from 'vue-router'
-import AppLayout from '@/shared/layouts/AppLayout.vue'
+import { RouterView, createRouter, createWebHistory } from 'vue-router'
 import { TheHeader } from '@/widgets/Header'
 import { TheNavigator } from '@/widgets/Navigator'
+import PageLayout from '@/shared/layouts/PageLayout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,7 +10,7 @@ const router = createRouter({
       path: '/',
       name: 'app',
       components: {
-        default: RouterView,
+        default: PageLayout,
         header: TheHeader,
         footer: TheNavigator,
       },
