@@ -1,11 +1,21 @@
 <template>
-  <div class="card-plus">
+  <div
+    class="card-plus"
+    @click="handlerClickCardPlus"
+    :class="{ 'animate-click': isAnimateClick }"
+  >
     <PlusIcon class="card-plus__icon" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { PlusIcon } from '@heroicons/vue/24/solid'
+import { ref } from 'vue'
+
+const isAnimateClick = ref(false)
+const handlerClickCardPlus = () => {
+  isAnimateClick.value = !isAnimateClick.value
+}
 </script>
 
 <style lang="scss" scoped>
@@ -23,6 +33,19 @@ import { PlusIcon } from '@heroicons/vue/24/solid'
   &__icon {
     width: 30px;
     height: 30px;
+  }
+}
+
+.animate-click {
+  animation: click-card 0.1s ease;
+}
+
+@keyframes click-card {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
   }
 }
 </style>

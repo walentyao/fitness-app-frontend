@@ -10,8 +10,6 @@ import { CardCreateTraining } from '@/entities/Training'
 
 <style lang="scss" scoped>
 .create-training-page {
-  padding: 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;

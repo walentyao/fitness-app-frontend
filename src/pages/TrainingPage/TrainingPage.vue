@@ -12,8 +12,6 @@ import CreateTraining from '@/features/CreateTraining/components/CreateTraining.
 
 <style scoped lang="scss">
 .page-training {
-  padding: 20px;
-
   display: flex;
   flex-direction: column;
   row-gap: 20px;
