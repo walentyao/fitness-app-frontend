@@ -22,11 +22,13 @@
 
 .slide-fade-leave-active {
   transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+  position: absolute;
+  width: 100%;
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateX(20px);
+  transform: translateX(15px);
   opacity: 0;
 }
 </style>
